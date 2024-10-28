@@ -66,6 +66,7 @@ app.post("/auth", (req, res) => {
     return res.status(403).send(false);
 });
 app.get("/database", async (req, res) => {
+    console.log(`Got get DataBase request sending ${await ReadDatabase()}`)
     return res.status(200).send(await ReadDatabase());
 });
 app.post("/inputdatabase", async (req, res) => {
