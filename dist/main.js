@@ -69,6 +69,7 @@ app.get("/database", async (req, res) => {
     return res.status(200).send(await ReadDatabase());
 });
 app.post("/database", async (req, res) => {
+    console.log(`Got Post Request with token ${req.body.token}`)
     let token = req.body.token;
     let item = req.body.numar;
     let db = await ReadDatabase();
